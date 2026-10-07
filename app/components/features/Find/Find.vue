@@ -10,8 +10,6 @@
 	const router = useRouter();
 
 	const handleFind = (e: SubmitEvent) => {
-		e.preventDefault();
-
 		const form = e.currentTarget;
 		if (!form) return;
 

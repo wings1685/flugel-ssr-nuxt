@@ -6,9 +6,7 @@
 	const defaultCreateValues = structuredClone({ ...defaultCreateTaskValues });
 	const newData = ref<CreateTaskSchema>(defaultCreateValues);
 
-	const handleCreate = async (e: Event) => {
-		e.preventDefault();
-
+	const handleCreate = async () => {
 		await apiCreate('/tasks/create', newData.value);
 
 		newData.value = defaultCreateValues;
@@ -18,7 +16,7 @@
 <template>
 	<div>
 		<h1>Input</h1>
-		<form @submit="handleCreate">
+		<form @submit.prevent="handleCreate">
 			<fieldset>
 				<input type="text" name="title" v-model="newData.title" placeholder="title..." />
 			</fieldset>
