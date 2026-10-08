@@ -7,6 +7,7 @@ export const apiFetch = async <T>(path: string, values?: Record<string, string>)
 		const params = new URLSearchParams(values);
 		query += `?${params}`;
 	}
+
 	return await ky.get(`${BASE_URL}/api${path}${query}`).json<T>();
 };
 

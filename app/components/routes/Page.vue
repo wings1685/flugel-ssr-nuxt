@@ -12,7 +12,7 @@
 	};
 	const { data } = useAsyncData('tasks', async () => {
 		const findQuery = {
-			title: route.query.title?.toString() ?? defaultFindValues.title ?? '',
+			title: route.query.title?.toString() ?? defaultFindValues.title,
 			sort: route.query.sort?.toString() ?? defaultFindValues.sort,
 		} as FindSchema;
 		const data = await apiFetch<FetchData>('/tasks', findQuery);

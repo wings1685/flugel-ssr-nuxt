@@ -3,15 +3,12 @@ import { Prisma } from "#prisma/client";
 import { defaultFindValues, findSchema, validateParse } from "@/_global/lib/validate";
 import type { FindSchema } from "@/_global/lib/validate";
 
-export const buildFindQuery = (params: Record<string, string | string[] | undefined>) => {
-	const findQuery = {
-		title: params.title ?? defaultFindValues.title,
-		sort: params.sort ?? defaultFindValues.sort,
+type BuildQuery<T> = T & Partial<FindSchema>;
+export const buildFindQuery = <T extends object>(params: BuildQuery<T>) => {
+	return {
+		title: params?.title ?? defaultFindValues.title,
+		sort: params?.sort ?? defaultFindValues.sort,
 	} as FindSchema;
-
-	validateParse(findSchema, findQuery);
-
-	return findQuery;
 };
 
 export const fetchTasks = async (findQuery: FindSchema) => {
