@@ -1,75 +1,21 @@
-# Nuxt Minimal Starter
+# SSR Experiments Nuxt Version
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt SSR での挙動を見るためだけの実験場です。
 
-## Setup
+**Note:** 本リポジトリは、実験場という性質であるため Issues 及び Pull Requests は受け付けておりません。
 
-Make sure to install dependencies:
+## Tech Stack
 
-```bash
-# npm
-npm install
+- Nuxt 4.6.0
 
-# pnpm
-pnpm install
+- Prisma 7.10.0
 
-# yarn
-yarn install
+## Experiments
 
-# bun
-bun install
-```
+この実験場では以下を行いました。
 
-## Development Server
+- Nuxt + Prisma での CRUD 処理
 
-Start the development server on `http://localhost:3000`:
+## Related Articles
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [各 JS フレームワークのみでの DB 連携探訪記](https://wings.hatenablog.com/entry/withoutLaravelFestival)

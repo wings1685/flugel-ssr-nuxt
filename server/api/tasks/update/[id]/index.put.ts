@@ -6,5 +6,5 @@ export default defineEventHandler(async (event) => {
 	data.id = +id;
 	await updateTask(data);
 
-	return { status: 201 };
+	return setResponseStatus(event, 204);
 });

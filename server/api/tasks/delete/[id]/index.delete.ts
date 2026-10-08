@@ -5,5 +5,5 @@ export default defineEventHandler(async (event) => {
 	const data = { id: +id };
 	await deleteTask(data);
 
-	return { status: 201 };
+	return setResponseStatus(event, 204);
 });

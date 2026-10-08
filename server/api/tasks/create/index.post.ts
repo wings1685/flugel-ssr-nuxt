@@ -4,5 +4,5 @@ export default defineEventHandler(async (event) => {
 	const data = await readBody(event);
 	await createTask(data);
 
-	return { status: 201 };
+	return setResponseStatus(event, 201);
 });
