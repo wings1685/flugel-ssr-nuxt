@@ -21,9 +21,9 @@
 	}, { watch: [() => route.query.title, () => route.query.sort] });
 </script>
 <template>
-	<main v-if="data">
+	<div v-if="data">
 		<Form />
 		<Find :title="data.findQuery.title" :sort="data.findQuery.sort" />
 		<List :tasks="data.tasks" />
-	</main>
+	</div>
 </template>
