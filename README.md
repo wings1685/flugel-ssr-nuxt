@@ -9,6 +9,8 @@ Nuxt SSR での挙動を見るためだけの実験場です。
 - Nuxt 4.6.0
 
 - Prisma 7.10.0
+- Vue Ref
+- Nano Stores
 
 ## Experiments
 
