@@ -1,3 +1,4 @@
+import { rawRef } from "@/_global/stores/ref";
 import { piquoStore } from "@/_global/piquo";
 import { rawNano } from "@/_global/stores/nano.ts";
 
@@ -6,7 +7,7 @@ export default defineEventHandler(async () => {
 	const { piquoNano } = piquoStore('piquoNano');
 
 	return {
-		piquoRefServer: piquoRef().forServer,
+		rawRefServer: rawRef.value.forServer, piquoRefServer: piquoRef().forServer,
 		rawNanoServer: rawNano.get().forServer, piquoNanoServer: piquoNano().get().forServer,
 	};
 });

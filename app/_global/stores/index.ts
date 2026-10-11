@@ -1,4 +1,5 @@
 export const storeNames = {
+	rawRef: 'Raw Ref',
 	piquo: 'Piquo Ref',
 	rawNano: 'Raw Nano',
 	piquoNano: 'Piquo Nano',

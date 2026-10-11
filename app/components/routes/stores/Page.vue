@@ -1,4 +1,5 @@
 <script setup lang="ts">
+	import { rawRef, setRawRef } from "@/_global/stores/ref";
 	import { apiFetch } from "@/_global/lib/api";
 	import { apiUpdate } from "@/_global/lib/api";
 	import { piquoStore } from "@/_global/piquo/index";
@@ -7,11 +8,12 @@
 	import type { StoreName } from "@/_global/stores/index";
 
 	type LoadedData = {
+		rawRefServer: string;
 		piquoRefServer: string;
 		rawNanoServer: string;
 		piquoNanoServer: string;
 	};
-	const { data } = useAsyncData('tasks', async () => {
+	const { data } = useAsyncData('stores', async () => {
 		const data = await apiFetch<LoadedData>('/experiments/stores');
 
 		return data;
@@ -28,7 +30,16 @@
 </script>
 <template>
 	<div v-if="data">
-		<h1>Piquo Store</h1>
+		<h1>Raw Ref</h1>
+		<fieldset>
+			<span>forServer: {{ data.rawRefServer }}</span>
+			<button @click="() => handleServerStore('rawRef')">Click</button>
+		</fieldset>
+		<fieldset>
+			<span>forClient: {{ rawRef.forClient }}</span>
+			<button @click="() => setRawRef('forClient')">Click</button>
+		</fieldset>
+		<h1>Piquo Ref</h1>
 		<fieldset>
 			<span>forServer: {{ data.piquoRefServer }}</span>
 			<button @click="() => handleServerStore('piquo')">Click</button>
@@ -46,7 +57,7 @@
 			<span>forClient: {{ rawNanoClient.forClient }}</span>
 			<button @click="() => setRawNano('forClient')">Click</button>
 		</fieldset>
-		<h1>Piquo Nano Store</h1>
+		<h1>Piquo Nano Stores</h1>
 		<fieldset>
 			<span>forServer: {{ data.piquoNanoServer }}</span>
 			<button @click="() => handleServerStore('piquoNano')">Click</button>
