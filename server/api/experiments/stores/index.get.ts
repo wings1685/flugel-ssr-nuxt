@@ -7,6 +7,6 @@ export default defineEventHandler(async () => {
 
 	return {
 		piquoRefServer: piquoRef().forServer,
-		rawNanoServer: rawNano.get().forServer, piquoNanoServer: piquoNano.get().forServer,
+		rawNanoServer: rawNano.get().forServer, piquoNanoServer: piquoNano().get().forServer,
 	};
 });
