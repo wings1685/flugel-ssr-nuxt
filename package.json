@@ -3,10 +3,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "build": "nuxt build",
+    "build:ssg": "VITE_BUILD_MODE=ssg nuxt build",
+    "preview": "nuxt build && nuxt preview",
+    "preview:ssg": "VITE_BUILD_MODE=ssg nuxt generate && npx serve dist",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
